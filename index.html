@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>21 card Game</title>
+</head>
+<body>
+    <head id="Gameinfo">
+        <h1>21 Game</h1>
+        <p>Round: <span id="round-number">0</span></p>
+        <p>Player Balance: $<span id="player-balance">100</span></p>
+    </head>
+    <main id="container">
+        <section id="player-section">
+            <h2>Player</h2>
+            <div id="player-cards"></div>
+            <p>Player Score: <span id="player-score">0</span></p>
+        </section>
+        <section id="dealer-section">
+            <h2>Dealer</h2>
+            <div id="dealer-cards"></div>
+            <p>Dealer Score: <span id="dealer-score">0</span></p>
+        </section>
+        <section id="game-controls">
+            <button id="hit-button">Hit</button>
+            <button id="stand-button">Stand</button>
+            <button id="restart-button">Restart</button>
+        </section>
+    
+        <section id="outcome-display">
+            <p id="outcome-message">Welcome to the 21 Card Game!</p>
+        </section>
+    </main>
+    
+</body>
+</html>
