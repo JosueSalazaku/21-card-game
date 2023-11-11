@@ -15,6 +15,14 @@ const dealerSection = document.querySelector("#dealer-section");
 const dealerCards = document.querySelector("#dealer-cards");
 const dealerScore = document.querySelector("#dealer-score");
 
+const gameControls = document.querySelector("#game-controls");
+const hitBtn = document.querySelector("#hit-bitton");
+const standBtn = document.querySelector("#stand-bitton");
+const restartBtn = document.querySelector("#restart-bitton");
+
+const outcomeDisplay = document.querySelector("#outcome-display");
+const outcomeMessage = document.querySelector("#outcome-message");
+
 
 for (const suit of suits) {
     for (let i = 0; i < ranks.length; i++) {
