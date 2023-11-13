@@ -35,5 +35,11 @@ for (const suit of suits) {
     };
 };
 
+function shuffle(deck) {
+    for (let i = deck.length - 1; i > 0; i--) {
+        const randomShuffle = Math.floor(Math.random() * (deck.length * 1))
+    }
+}
+
 console.log(deck)
 console.log()
