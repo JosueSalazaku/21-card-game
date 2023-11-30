@@ -36,6 +36,7 @@ const restartBtn = document.querySelector("#restart-button");
 
 const outcomeDisplay = document.querySelector("#outcome-display");
 const outcomeMessage = document.querySelector("#outcome-message");
+const cardDisplay = document.querySelector("#card-display");
 
 let userTotal = 0;
 
@@ -59,21 +60,28 @@ function shuffle() {
   }
 }
 
+function getRandomCard() {
+  const randomIndex = Math.floor(Math.random() * deck.length);
+  const card = deck[randomIndex];
+  card.filename = `${card.rank}${card.suit}.png`;
+  return card;
+}
+
 function drawCard() {
   const drawCard = confirm("Do you want to draw a card?");
 
   if (drawCard) {
     const randomCardValue = getRandomCardValue();
     userTotal += randomCardValue;
-
-    const drawCardtext = document.createElement("");
-    alert(
-      `You drew a card with value ${randomCardValue}. Your total is now ${userTotal}.`
-    );
+    const drawCardtext = document.createElement("h2");
+    drawCardtext.innerHTML = `You drew a card with value ${randomCardValue}. Your total is now ${userTotal}.`;
+    outcomeDisplay.appendChild(drawCardtext);
   }
 
   if (userTotal > 21) {
-    alert("Bust! Your total exceeds 21. You lose!");
+    const userTotalCardScoreText = document.createElement("h2");
+    userTotalCardScoreText.innerHTML = "Bust! Your total exceeds 21. You lose!";
+    outcomeDisplay.appendChild(userTotalCardScoreText);
   } else {
     alert("You chose not to draw a card.");
   }
@@ -99,13 +107,10 @@ function drawCardForPC() {
     alert("You chose not to draw a card.");
   }
 }
-function getRandomCardValue() {
-  return values[Math.floor(Math.random() * values.length)];
-}
 
+hitBtn.addEventListener("click", shuffle);
 hitBtn.addEventListener("click", drawCard);
 
-shuffle();
 initializeDeck();
-drawCard();
+
 console.log(deck);
