@@ -71,11 +71,18 @@ function drawCard() {
   const drawCard = confirm("Do you want to draw a card?");
 
   if (drawCard) {
-    const randomCardValue = getRandomCardValue();
-    userTotal += randomCardValue;
+    const randomCard = getRandomCard();
+    userTotal += randomCard.value;
+
     const drawCardtext = document.createElement("h2");
-    drawCardtext.innerHTML = `You drew a card with value ${randomCardValue}. Your total is now ${userTotal}.`;
+    drawCardtext.innerHTML = `You drew a ${randomCard.rank} of ${randomCard.suit}. Your total is now ${userTotal}.`;
     outcomeDisplay.appendChild(drawCardtext);
+
+    const cardImg = document.createElement("img");
+    cardImg.src = `./playingCards/${randomCard.rank}${randomCard.suit}.png`;
+    cardImg.alt = `${randomCard.rank} of ${randomCard.suit}`;
+
+    cardDisplay.appendChild(cardImg);
   }
 
   if (userTotal > 21) {
@@ -86,6 +93,7 @@ function drawCard() {
     alert("You chose not to draw a card.");
   }
 }
+
 function getRandomCardValue() {
   return values[Math.floor(Math.random() * values.length)];
 }
@@ -112,5 +120,6 @@ hitBtn.addEventListener("click", shuffle);
 hitBtn.addEventListener("click", drawCard);
 
 initializeDeck();
+shuffle();
 
 console.log(deck);
