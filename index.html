@@ -8,22 +8,25 @@
     <title>21 card Game</title>
   </head>
   <body>
-    <head id="Gameinfo">
+    <header id="Gameinfo">
       <h1>21 Game</h1>
       <p>Round: <span id="round-number">0</span></p>
       <p>Player Balance: $<span id="player-balance">1000</span></p>
-    </head>
+    </header>
     <main id="container">
-      <section id="player-section">
-        <h2>Player</h2>
-        <div id="player-cards"></div>
-        <p>Player Score: <span id="player-score">0</span></p>
-      </section>
-      <section id="dealer-section">
-        <h2>Dealer</h2>
-        <div id="dealer-cards"></div>
-        <p>Dealer Score: <span id="dealer-score">0</span></p>
-      </section>
+      <div id="playing-section">
+        <section id="player-section">
+          <h2>Player</h2>
+          <div id="player-cards"></div>
+          <p>Player Score: <span id="player-score">0</span></p>
+        </section>
+        <section id="dealer-section">
+          <h2>Dealer</h2>
+          <div id="dealer-cards"></div>
+          <p>Dealer Score: <span id="dealer-score">0</span></p>
+        </section>
+      </div>
+
       <section id="game-controls">
         <button id="hit-button">Hit</button>
         <button id="stand-button">Stand</button>

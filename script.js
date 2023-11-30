@@ -65,6 +65,29 @@ function drawCard() {
   if (drawCard) {
     const randomCardValue = getRandomCardValue();
     userTotal += randomCardValue;
+
+    const drawCardtext = document.createElement("");
+    alert(
+      `You drew a card with value ${randomCardValue}. Your total is now ${userTotal}.`
+    );
+  }
+
+  if (userTotal > 21) {
+    alert("Bust! Your total exceeds 21. You lose!");
+  } else {
+    alert("You chose not to draw a card.");
+  }
+}
+function getRandomCardValue() {
+  return values[Math.floor(Math.random() * values.length)];
+}
+
+function drawCardForPC() {
+  const drawCard = confirm("Do you want to draw a card?");
+
+  if (drawCard) {
+    const randomCardValue = getRandomCardValue();
+    userTotal += randomCardValue;
     alert(
       `You drew a card with value ${randomCardValue}. Your total is now ${userTotal}.`
     );

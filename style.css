@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(77, 77, 146);
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+#Gameinfo {
+  margin-top: 25px;
+  margin-bottom: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#container {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+#playing-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#player-section {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#dealer-section {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#game-controls {
+  margin-top: 125px;
+  margin-bottom: 125px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  border-radius: 15px;
+  border: none;
+  font-size: larger;
+}
