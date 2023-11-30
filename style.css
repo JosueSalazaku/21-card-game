@@ -62,3 +62,12 @@ button {
   justify-content: center;
   align-items: center;
 }
+
+#card-display {
+  display: flex;
+  flex-direction: row;
+}
+
+#card-display img {
+  width: 125px;
+}
