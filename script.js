@@ -110,7 +110,7 @@ function drawCardForPC() {
     dealerTotal += randomCard.value;
 
     const PcDrawCardText = document.createElement("h2");
-    PcDrawCardText.innerHTML = `Dealer drew a card with value ${randomCard}. Dealer total is now ${userTotal}.`;
+    PcDrawCardText.innerHTML = `Dealer drew a ${randomCard.rank} of ${randomCard.suit}. Dealer total is now ${dealerTotal}.`;
     PcDrawCardText.style.color = "orange";
     outcomeDisplay.appendChild(PcDrawCardText);
 
@@ -132,6 +132,6 @@ hitBtn.addEventListener("click", drawCard);
 hitBtn.addEventListener("click", drawCardForPC);
 
 initializeDeck();
-shuffle();
+// shuffle();
 
 console.log(deck);

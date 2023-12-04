@@ -69,6 +69,9 @@ button {
   flex-direction: row;
   margin-top: 40px;
   gap: 550px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 #card-display #player-cards img {
@@ -79,4 +82,5 @@ button {
 #card-display #dealer-cards img {
   width: 85px;
   margin: -30px;
+  direction: rtl;
 }
