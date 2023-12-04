@@ -39,6 +39,7 @@ const outcomeMessage = document.querySelector("#outcome-message");
 const cardDisplay = document.querySelector("#card-display");
 
 let userTotal = 0;
+let dealerTotal = 0;
 
 function initializeDeck() {
   for (const suit of suits) {
@@ -75,7 +76,7 @@ function drawCard() {
     userTotal += randomCard.value;
 
     const drawCardtext = document.createElement("h2");
-    drawCardtext.innerHTML = `You drew a ${randomCard.rank} of ${randomCard.suit}. Your total is now ${userTotal}.`;
+    drawCardtext.innerHTML = `Player drew a ${randomCard.rank} of ${randomCard.suit}. Player total is now ${userTotal}.`;
     outcomeDisplay.appendChild(drawCardtext);
 
     const cardImg = document.createElement("img");
@@ -87,7 +88,8 @@ function drawCard() {
 
   if (userTotal > 21) {
     const userTotalCardScoreText = document.createElement("h2");
-    userTotalCardScoreText.innerHTML = "Bust! Your total exceeds 21. You lose!";
+    userTotalCardScoreText.innerHTML =
+      "Bust! Player total exceeds 21. You lose!";
     outcomeDisplay.appendChild(userTotalCardScoreText);
   } else {
     alert("You chose not to draw a card.");
@@ -99,14 +101,23 @@ function getRandomCardValue() {
 }
 
 function drawCardForPC() {
-  const drawCard = confirm("Do you want to draw a card?");
+  const drawCard = confirm(
+    "The PC/ Dealer will draw a card. Do you want to continue"
+  );
 
   if (drawCard) {
-    const randomCardValue = getRandomCardValue();
-    userTotal += randomCardValue;
-    alert(
-      `You drew a card with value ${randomCardValue}. Your total is now ${userTotal}.`
-    );
+    const randomCard = getRandomCard();
+    dealerTotal += randomCard.value;
+
+    const PcDrawCardText = document.createElement("h2");
+    PcDrawCardText.innerHTML = `Dealer drew a card with value ${randomCard}. Dealer total is now ${userTotal}.`;
+    PcDrawCardText.style.color = "orange";
+    outcomeDisplay.appendChild(PcDrawCardText);
+
+    const cardImg = document.createElement("img");
+    cardImg.src = `./playingCards/${randomCard.filename}`;
+    cardImg.alt = `${randomCard.rank} of ${randomCard.suit}`;
+    dealerCards.appendChild(cardImg);
   }
 
   if (userTotal > 21) {
@@ -118,6 +129,7 @@ function drawCardForPC() {
 
 hitBtn.addEventListener("click", shuffle);
 hitBtn.addEventListener("click", drawCard);
+hitBtn.addEventListener("click", drawCardForPC);
 
 initializeDeck();
 shuffle();
