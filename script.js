@@ -83,7 +83,7 @@ function drawCard() {
     cardImg.src = `./playingCards/${randomCard.rank}${randomCard.suit}.png`;
     cardImg.alt = `${randomCard.rank} of ${randomCard.suit}`;
 
-    cardDisplay.appendChild(cardImg);
+    playerCards.appendChild(cardImg);
   }
 
   if (userTotal > 21) {
