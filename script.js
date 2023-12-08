@@ -42,7 +42,9 @@ function updateRoundNumber() {
   roundNumber.innerHTML = `Round: ${roundNumberValue}`;
 }
 
-function updateScore() {}
+function updateScores() {
+  playerBalance.innerHTML = `Player Wins: ${userWins} | Dealer Wins: ${dealerWins}`;
+}
 
 function initializeDeck() {
   for (const suit of suits) {
