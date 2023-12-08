@@ -18,28 +18,31 @@ const ranks = [
 const values = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
 
 const gameInfo = document.querySelector("#Gameinfo");
-const roundNumber = document.querySelector("#round-number");
 const playerBalance = document.querySelector("#player-balance");
-
 const playerSection = document.querySelector("#player-section");
 const playerCards = document.querySelector("#player-cards");
 const playerScore = document.querySelector("#player-score");
-
 const dealerSection = document.querySelector("#dealer-section");
 const dealerCards = document.querySelector("#dealer-cards");
 const dealerScore = document.querySelector("#dealer-score");
-
 const gameControls = document.querySelector("#game-controls");
 const hitBtn = document.querySelector("#hit-button");
 const standBtn = document.querySelector("#stand-button");
 const restartBtn = document.querySelector("#restart-button");
-
 const outcomeDisplay = document.querySelector("#outcome-display");
 const outcomeMessage = document.querySelector("#outcome-message");
 const cardDisplay = document.querySelector("#card-display");
+const roundNumber = document.querySelector("#round-number");
 
 let userTotal = 0;
 let dealerTotal = 0;
+let roundNumberValue = 1;
+
+function updateRoundNumber() {
+  roundNumber.innerHTML = `Round: ${roundNumberValue}`;
+}
+
+function updateScore() {}
 
 function initializeDeck() {
   for (const suit of suits) {
@@ -148,6 +151,6 @@ hitBtn.addEventListener("click", drawCard);
 hitBtn.addEventListener("click", drawCardForPC);
 
 initializeDeck();
-// shuffle();
+shuffle();
 
 console.log(deck);
