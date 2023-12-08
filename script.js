@@ -84,6 +84,12 @@ function drawCard() {
     cardImg.alt = `${randomCard.rank} of ${randomCard.suit}`;
 
     playerCards.appendChild(cardImg);
+
+    setTimeout(() => {
+      outcomeDisplay.removeChild(drawCardtext);
+    }, 2000);
+  } else {
+    alert("You chose not to draw a card.");
   }
 
   if (userTotal > 21) {
@@ -91,8 +97,10 @@ function drawCard() {
     userTotalCardScoreText.innerHTML =
       "Bust! Player total exceeds 21. You lose!";
     outcomeDisplay.appendChild(userTotalCardScoreText);
-  } else {
-    alert("You chose not to draw a card.");
+
+    setTimeout(() => {
+      outcomeDisplay.removeChild(userTotalCardScoreText);
+    }, 2000);
   }
 }
 
@@ -118,6 +126,12 @@ function drawCardForPC() {
     cardImg.src = `./playingCards/${randomCard.filename}`;
     cardImg.alt = `${randomCard.rank} of ${randomCard.suit}`;
     dealerCards.appendChild(cardImg);
+
+    setTimeout(() => {
+      outcomeDisplay.removeChild(PcDrawCardText);
+    }, 2000);
+  } else {
+    alert("You chose not to draw a card.");
   }
 
   if (userTotal > 21) {

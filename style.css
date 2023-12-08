@@ -75,12 +75,12 @@ button {
 }
 
 #card-display #player-cards img {
-  width: 85px;
+  width: 100px;
   margin: -30px;
 }
 
 #card-display #dealer-cards img {
-  width: 85px;
+  width: 100px;
   margin: -30px;
   direction: rtl;
 }
