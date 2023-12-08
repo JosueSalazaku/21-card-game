@@ -121,7 +121,9 @@ function drawCardForPC() {
   }
 
   if (userTotal > 21) {
-    alert("Bust! Your total exceeds 21. You lose!");
+    const pcTotalCardScoreText = document.createElement("h2");
+    pcTotalCardScoreText.innerHTML = "Damn Bro! Pc total exceeds 21. PC Lost";
+    outcomeDisplay.appendChild(pcTotalCardScoreText);
   } else {
     alert("You chose not to draw a card.");
   }
